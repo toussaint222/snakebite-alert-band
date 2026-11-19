@@ -223,4 +223,4 @@ all confirmed by the owner on 2026-11-19 (DECISIONS.md, "Delegation"):
 **Next:** v1 (M0–M4) is complete and approved. VISION.md Phase 1 is next,
 and starts with the owner filing the provisional patent. Builder work that
 needs no spend or disclosure: the manual strip-entry mode, and drafting the
-toxinologist brief (kept private until filing). Nothing is committed yet.
+toxinologist brief (kept private until filing). v1 is committed locally (no remote).
