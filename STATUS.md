@@ -222,4 +222,4 @@ all confirmed by the owner on 2026-11-19 (DECISIONS.md, "Delegation"):
 
 **Next:** v1 (M0–M4) is complete and approved. VISION.md Phase 1 is next,
 (no patent: owner's ruling R-29, 2026-11-19). Builder work that needs no
-spend: the manual strip-entry mode, and drafting the toxinologist brief. v1 is committed locally (no remote).
+spend: the manual strip-entry mode, and drafting the toxinologist brief. Published 2026-11-19 at https://github.com/toussaint222/snakebite-alert-band (public, owner's request). Start with IDEA.md.
