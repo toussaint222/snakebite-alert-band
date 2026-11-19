@@ -1,0 +1,9 @@
+{
+  "_note": "Research demonstrator — not a medical device. Power and cost ASSUMPTIONS for the battery budget, all PLACEHOLDER. They are rough figures of the right order for a small wearable with an Iridium 9603-class modem, from the builder's general knowledge and not checked against datasheets. The report compares policies; it is not a battery-life promise. Replace with measured values (D-22).",
+  "battery_mah":            {"value": 1200, "status": "PLACEHOLDER", "note": "band battery capacity"},
+  "baseline_ma":            {"value": 1.0,  "status": "PLACEHOLDER", "note": "always-on average: processor mostly asleep + vitals sensing + ISF patch reader"},
+  "gps_fix_mas":            {"value": 450,  "status": "PLACEHOLDER", "note": "one GPS fix attempt, ~30 mA for ~15 s (longer and often failing under canopy)"},
+  "signal_check_mas":       {"value": 400,  "status": "PLACEHOLDER", "note": "power up the modem and read signal bars, ~40 mA for ~10 s"},
+  "send_attempt_mas":       {"value": 4500, "status": "PLACEHOLDER", "note": "one send session, ~150 mA for ~30 s whether or not it succeeds"},
+  "credit_bytes":           {"value": 50,   "status": "PLACEHOLDER", "note": "bytes per message credit (D-08)"}
+}

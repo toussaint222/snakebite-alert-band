@@ -1,0 +1,63 @@
+{
+  "name": "Stand-in inputs: contact only, no body-wide signs",
+  "description": "M3 gate. Same story as the dry bite, but every reading comes from a stand-in sensor file: the cassette is a photo (faint 3FTx line) and the vitals are a CSV with a slipped probe, an impossible SpO2 of 0, a 20-minute gap and blank cells. Hypothetical 24 h patch so the watch can finish. Expected: watch, then stand down. No dispatch.",
+  "device_id": 1011,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 46800,
+  "sensor": {
+    "applied_t": 0,
+    "life_s": 86400
+  },
+  "vitals_csv": "data/vitals_contact_only.csv",
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 46800,
+      "every_s": 900,
+      "levels": {}
+    }
+  ],
+  "timeline": [
+    {
+      "t": 300,
+      "lfa_image": "data/cassette_contact_trace_3ftx.png"
+    }
+  ],
+  "expect": {
+    "final_state": "STOOD_DOWN",
+    "dispatched": false,
+    "never": [
+      "ESCALATED"
+    ],
+    "visits": [
+      "SYSTEMIC_WATCH"
+    ],
+    "cassette_reads": [
+      {
+        "3FTx": 1
+      }
+    ],
+    "local_levels": {
+      "3FTx": 1
+    },
+    "base_receives": [
+      "CONTACT_INFO",
+      "STAND_DOWN"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Stand-in inputs: invalid cassette, then a retest",
+  "description": "The first cassette photo has a strong 3FTx line but no control line, so the test is invalid and must count for nothing: the band stays idle. A second cassette 15 minutes later is valid and confirms the local signal. Vitals stay normal. Expected: watching, no dispatch.",
+  "device_id": 1013,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 3600,
+  "vitals_csv": "data/vitals_contact_only.csv",
+  "timeline": [
+    {
+      "t": 300,
+      "lfa_image": "data/cassette_invalid_no_control.png"
+    },
+    {
+      "t": 1200,
+      "lfa_image": "data/cassette_elapid_3ftx2_pla2_1.png"
+    }
+  ],
+  "expect": {
+    "final_state": "SYSTEMIC_WATCH",
+    "dispatched": false,
+    "never": [
+      "ESCALATED"
+    ],
+    "visits": [
+      "SYSTEMIC_WATCH"
+    ],
+    "cassette_reads": [
+      "INVALID",
+      {
+        "3FTx": 2,
+        "PLA2": 1
+      }
+    ],
+    "local_levels": {
+      "3FTx": 2,
+      "PLA2": 1
+    },
+    "first_state_change_after_s": 1200,
+    "base_receives": [
+      "CONTACT_INFO"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

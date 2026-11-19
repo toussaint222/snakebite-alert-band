@@ -1,0 +1,87 @@
+{
+  "name": "Viper bite, local team cancels",
+  "description": "Same viper bite, but at 1 h the local team cancels on the band (they have a solution on hand). R-01: no dispatch.",
+  "device_id": 1005,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 14400,
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 14400,
+      "every_s": 600,
+      "levels": {
+        "SVMP": 3,
+        "SVSP": 2
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 74,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 16,
+        "hr": 102,
+        "skin_temp": 33.3
+      }
+    },
+    {
+      "t": 3600,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 96,
+        "skin_temp": 33.6
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "SVMP": 4,
+          "SVSP": 3
+        }
+      }
+    },
+    {
+      "t": 3600,
+      "action": "local_cancel"
+    }
+  ],
+  "expect": {
+    "final_state": "RESOLVED",
+    "dispatched": false,
+    "never": [
+      "ESCALATED"
+    ],
+    "base_receives": [
+      "CONTACT_INFO",
+      "CANCELLED_LOCAL"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

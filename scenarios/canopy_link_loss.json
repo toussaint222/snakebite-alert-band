@@ -1,0 +1,113 @@
+{
+  "name": "Elapid bite under canopy",
+  "description": "Same elapid timeline, but the wearer is under dense canopy from 30 min to 90 min: no satellite link at all. The ALERT at 40 min is queued, retried (a cheap signal check each minute, a full send at least every 5 min, R-26), and delivered after the canopy window with its original event time.",
+  "device_id": 1006,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 9000,
+  "link": {
+    "latency_s": [
+      10,
+      60
+    ],
+    "blackouts": [
+      [
+        1800,
+        5400
+      ]
+    ],
+    "seed": 7
+  },
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 2399,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 1
+      }
+    },
+    {
+      "from": 2400,
+      "to": 10800,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 2,
+        "PLA2": 1
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 75,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 15,
+        "hr": 100,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 3000,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 104,
+        "skin_temp": 33.2
+      }
+    },
+    {
+      "t": 5400,
+      "vitals": {
+        "spo2": 88,
+        "rr": 27,
+        "hr": 118,
+        "skin_temp": 33.4
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "3FTx": 2,
+          "PLA2": 1
+        }
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "ESCALATED",
+    "dispatched": true,
+    "payload_class": "FAMILY_MATCHED",
+    "families_include": [
+      "3FTx"
+    ],
+    "alert_delay_min_s": 3000,
+    "alert_retransmitted": true,
+    "base_receives": [
+      "CONTACT_INFO",
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

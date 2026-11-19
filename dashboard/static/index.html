@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venom-Response Base</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <div>
+      <h1>Venom-Response Base</h1>
+      <div class="sub" id="scenario">No scenario running</div>
+    </div>
+  </div>
+  <div class="clock">
+    <div class="clock-time" id="clock">--:--:--</div>
+    <div class="sub" id="clock-kind">UTC</div>
+  </div>
+</header>
+<div class="disclaimer" role="note">Research demonstrator — not a medical device. Simulation and drug-free trainer hardware only.</div>
+
+<main class="layout">
+  <section class="col-bands" aria-label="Bands">
+    <div id="bands"><p class="empty">Waiting for messages from a band…<br>Start a scenario with <code>python3 -m vrw demo scenarios/elapid_systemic.json</code></p></div>
+  </section>
+  <section class="col-side">
+    <div class="panel">
+      <div class="panel-head"><h2>Position</h2><span class="sub" id="plot-note">offline plot — no map tiles</span></div>
+      <div id="plot" class="plot"></div>
+      <div id="coords" class="coords"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Messages received</h2><span class="sub" id="log-note"></span></div>
+      <div class="log-wrap"><table class="log"><thead><tr><th>Received</th><th>Band</th><th>Type</th><th>Happened</th><th>Delay</th></tr></thead><tbody id="log"></tbody></table></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">Research demonstrator — not a medical device. All checklist content is PLACEHOLDER until supplied by a toxinologist.</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

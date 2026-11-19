@@ -1,0 +1,77 @@
+{
+  "name": "ISF sensor only, rising from zero",
+  "description": "No cassette read. ISF reads 0 before the bite, then 3FTx trace from 5 min on; vitals normal. One sensor must not supply both signals (R-19): it confirms local, then watches. No dispatch.",
+  "device_id": 1008,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 14400,
+  "isf_reads": [
+    {
+      "from": 0,
+      "to": 299,
+      "every_s": 60,
+      "levels": {}
+    },
+    {
+      "from": 300,
+      "to": 14400,
+      "every_s": 60,
+      "levels": {
+        "3FTx": 1
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 74,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 16,
+        "hr": 102,
+        "skin_temp": 33.3
+      }
+    },
+    {
+      "t": 3600,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 96,
+        "skin_temp": 33.6
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "SYSTEMIC_WATCH",
+    "dispatched": false,
+    "never": [
+      "ESCALATED"
+    ],
+    "base_receives": [
+      "CONTACT_INFO"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

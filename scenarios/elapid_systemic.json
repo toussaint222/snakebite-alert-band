@@ -1,0 +1,111 @@
+{
+  "name": "Elapid bite, systemic",
+  "description": "3FTx-dominant bite. Cassette positive at 5 min (confirms local). ISF 3FTx rises a band at 40 min (systemic), then SpO2 falls and breathing rate climbs. Base dispatches, acknowledges, and closes the alert at 2.5 h when the responder is on scene.",
+  "device_id": 1003,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 10800,
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 2399,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 1
+      }
+    },
+    {
+      "from": 2400,
+      "to": 10800,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 2,
+        "PLA2": 1
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 75,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 15,
+        "hr": 100,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 3000,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 104,
+        "skin_temp": 33.2
+      }
+    },
+    {
+      "t": 5400,
+      "vitals": {
+        "spo2": 88,
+        "rr": 27,
+        "hr": 118,
+        "skin_temp": 33.4
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "3FTx": 2,
+          "PLA2": 1
+        }
+      }
+    },
+    {
+      "t": 9000,
+      "base": "resolve"
+    }
+  ],
+  "expect": {
+    "final_state": "RESOLVED",
+    "visits": [
+      "SYSTEMIC_WATCH",
+      "ESCALATED"
+    ],
+    "dispatched": true,
+    "payload_class": "FAMILY_MATCHED",
+    "families_include": [
+      "3FTx"
+    ],
+    "reasons_include": [
+      "isf_rise"
+    ],
+    "alert_latency_max_s": 60,
+    "base_receives": [
+      "CONTACT_INFO",
+      "ALERT",
+      "RESOLVED"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

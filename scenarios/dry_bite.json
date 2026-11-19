@@ -1,0 +1,86 @@
+{
+  "name": "Dry bite",
+  "description": "Bite with venom contact on the skin (trace 3FTx on the cassette) but no venom delivered. ISF stays at zero, vitals settle. Uses a hypothetical 24 h sensor patch so the 12 h watch can finish. Expected: watch, then stand down. No dispatch.",
+  "device_id": 1001,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 46800,
+  "sensor": {
+    "applied_t": 0,
+    "life_s": 86400
+  },
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 46800,
+      "every_s": 900,
+      "levels": {}
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 72,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 15,
+        "hr": 105,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 1800,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 80,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "3FTx": 1
+        }
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "STOOD_DOWN",
+    "dispatched": false,
+    "never": [
+      "ESCALATED"
+    ],
+    "visits": [
+      "SYSTEMIC_WATCH"
+    ],
+    "base_receives": [
+      "CONTACT_INFO",
+      "STAND_DOWN"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

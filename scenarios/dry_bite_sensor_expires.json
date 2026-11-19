@@ -1,0 +1,81 @@
+{
+  "name": "Dry bite, sensor expires during the watch",
+  "description": "Same dry bite with today's ~12 h sensor life. The patch expires before the 12 h watch ends, so by rule R-06 the band never stands itself down: it reports SENSOR_EXPIRED and keeps watching. Shows the sensor-lifetime open problem.",
+  "device_id": 1002,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 46800,
+  "sensor": {
+    "applied_t": 0,
+    "life_s": 43200
+  },
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 43200,
+      "every_s": 900,
+      "levels": {}
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 72,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 15,
+        "hr": 105,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 1800,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 80,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "3FTx": 1
+        }
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "SYSTEMIC_WATCH",
+    "dispatched": false,
+    "never": [
+      "ESCALATED",
+      "STOOD_DOWN"
+    ],
+    "base_receives": [
+      "CONTACT_INFO",
+      "SENSOR_EXPIRED"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

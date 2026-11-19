@@ -1,0 +1,42 @@
+{
+  "_note": "Research demonstrator — not a medical device. Every value here is a PLACEHOLDER chosen only so the simulator runs. None is a clinical value. Changing one is a DECISIONS.md entry.",
+
+  "local_confirm_window_s":   {"value": 600,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-04", "note": "CONTACT must be confirmed within this time or returns to IDLE"},
+  "isf_confirm_reads":        {"value": 2,     "unit": "reads",        "status": "PLACEHOLDER", "ruling": "R-04", "note": "positive ISF reads needed to confirm (a valid lateral-flow positive confirms on its own)"},
+  "isf_confirm_min_gap_s":    {"value": 120,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-04", "note": "minimum gap between first and last confirming ISF reads"},
+
+  "isf_rise_bands":           {"value": 1,     "unit": "bands",        "status": "PLACEHOLDER", "ruling": "R-05", "note": "S1: ISF level rise counted as systemic"},
+  "isf_rise_window_s":        {"value": 1800,  "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-05", "note": "S1 window"},
+  "spo2_low_pct":             {"value": 92,    "unit": "%",            "status": "PLACEHOLDER", "ruling": "R-05", "note": "S2 level"},
+  "spo2_sustain_s":           {"value": 300,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-05", "note": "S2 must hold this long"},
+  "spo2_fall_per_10min":      {"value": 2,     "unit": "% / 10 min",   "status": "PLACEHOLDER", "ruling": "R-05", "note": "S2 trend: falling at least this fast"},
+  "rr_high":                  {"value": 24,    "unit": "breaths/min",  "status": "PLACEHOLDER", "ruling": "R-05", "note": "S3 level"},
+  "rr_sustain_s":             {"value": 300,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-05", "note": "S3 must hold this long"},
+  "rr_rise_per_10min":        {"value": 2,     "unit": "/min / 10 min","status": "PLACEHOLDER", "ruling": "R-05", "note": "S3 trend: rising at least this fast"},
+  "hr_enabled":               {"value": false, "unit": "",             "status": "PLACEHOLDER", "ruling": "R-05", "note": "S4 heart-rate trend; off by default"},
+
+  "standdown_s":              {"value": 43200, "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-06", "note": "dry-bite stand-down after this long with no systemic signal; never on an expired sensor"},
+
+  "danger_level":             {"value": 3,     "unit": "band",         "status": "PLACEHOLDER", "ruling": "R-01", "note": "local level (moderate) that starts the danger timer"},
+  "danger_time_s":            {"value": 7200,  "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-01", "note": "strong local signal held this long escalates with BROAD payload class"},
+
+  "systemic_only_clear_s":    {"value": 1800,  "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-02", "note": "SYSTEMIC_ONLY returns to IDLE after systemic signs clear for this long"},
+
+  "alert_repeat_unacked_s":   {"value": 600,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-15", "note": "resend ALERT while not acknowledged"},
+  "alert_repeat_acked_s":     {"value": 1800,  "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-15", "note": "resend ALERT after acknowledgement"},
+  "heartbeat_s":              {"value": 21600, "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-15", "note": "HEARTBEAT after this long with nothing sent"},
+  "retry_interval_s":         {"value": 60,    "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-26", "note": "retry interval while an urgent message (ALERT, cancel, resolved) waits; also the first routine retry"},
+  "retry_backoff_max_s":      {"value": 900,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-26", "note": "routine messages only: wait doubles after each failure up to this"},
+  "link_min_signal":          {"value": 2,     "unit": "bars 0-5",     "status": "PLACEHOLDER", "ruling": "R-26", "note": "routine messages only: don't power up a send unless the signal shows this many bars. Never applied to urgent messages"},
+  "urgent_blind_attempt_s":   {"value": 300,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-26", "note": "urgent messages while the signal reads 0 bars: a cheap signal check every retry_interval_s, but a full send attempt at least this often anyway (the reading can be wrong)"},
+  "stuck_alarm_s":            {"value": 300,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-27", "note": "an urgent message unsent this long sets off the band's local alarm (buzzer + light): move to open sky"},
+  "queue_max":                {"value": 24,    "unit": "messages",     "status": "PLACEHOLDER", "ruling": "R-26", "note": "queue limit; oldest routine message dropped first; urgent messages never dropped; only the newest HEARTBEAT kept"},
+  "battery_low_pct":          {"value": 20,    "unit": "%",            "status": "PLACEHOLDER", "ruling": "M4",   "note": "sets battery-low flag"},
+
+  "lfa_control_min_contrast": {"value": 40,    "unit": "grey levels",  "status": "PLACEHOLDER", "ruling": "R-23", "note": "control line must be at least this much darker than the strip beside it, or the test is INVALID"},
+  "lfa_band_ratios":          {"value": [0.10, 0.30, 0.55, 0.80], "unit": "x control", "status": "PLACEHOLDER", "ruling": "R-23", "note": "test-line darkness as a fraction of the control line's: at or above each cut-off = band 1 trace, 2 low, 3 moderate, 4 high. Band 3 starts the R-01 danger timer, so these are dispatch logic"},
+  "lfa_control_search":       {"value": [0.08, 0.16], "unit": "x window", "status": "PLACEHOLDER", "ruling": "R-23", "note": "where inside the result window the control line may be (nominal 0.12); kept narrow so a missing control can never be confused with the 3FTx line at 0.29, nor a flipped image's SVSP line at 0.20"},
+
+  "vitals_plausible":         {"value": {"spo2": [50, 100], "rr": [3, 70], "hr": [25, 250], "skin_temp": [20, 42]}, "unit": "", "status": "PLACEHOLDER", "ruling": "R-24", "note": "a reading outside these is treated as a sensor artifact and dropped (not carried forward)"},
+  "vitals_max_gap_s":         {"value": 180,   "unit": "s",            "status": "PLACEHOLDER", "ruling": "R-24", "note": "a 'sustained' SpO2/breathing condition only counts if there is no gap in readings longer than this inside the hold window"}
+}

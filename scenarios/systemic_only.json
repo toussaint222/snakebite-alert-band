@@ -1,0 +1,83 @@
+{
+  "name": "Systemic signs, no local signal",
+  "description": "No toxin signal at the band, but SpO2 falls and breathing rate rises for an hour (bite elsewhere, illness, or exertion). R-02: one SYSTEMIC_ONLY_INFO, never a dispatch; returns to IDLE 30 min after vitals are back in range.",
+  "device_id": 1007,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 10800,
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 80,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 1200,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 82,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 3000,
+      "vitals": {
+        "spo2": 88,
+        "rr": 27,
+        "hr": 120,
+        "skin_temp": 33.5
+      }
+    },
+    {
+      "t": 5400,
+      "vitals": {
+        "spo2": 88,
+        "rr": 27,
+        "hr": 118,
+        "skin_temp": 33.5
+      }
+    },
+    {
+      "t": 6000,
+      "vitals": {
+        "spo2": 97,
+        "rr": 15,
+        "hr": 85,
+        "skin_temp": 33.1
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "IDLE",
+    "visits": [
+      "SYSTEMIC_ONLY"
+    ],
+    "never": [
+      "CONTACT",
+      "ESCALATED"
+    ],
+    "dispatched": false,
+    "base_receives": [
+      "SYSTEMIC_ONLY_INFO"
+    ],
+    "base_never_receives": [
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

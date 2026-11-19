@@ -1,0 +1,90 @@
+{
+  "name": "Viper bite, strong local signal only",
+  "description": "SVMP/SVSP strongly positive at the bite; ISF holds steady; vitals stay in range. No systemic signal, so the two-signal rule never fires. Owner ruling R-01: a strong local signal held past the danger timer (PLACEHOLDER 2 h) escalates anyway, with the BROAD pre-made payload class. ISF reads 0 before the bite, so the jump to SVMP 3 must not count as a systemic rise (R-19).",
+  "device_id": 1004,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 14400,
+  "isf_reads": [
+    {
+      "from": 0,
+      "to": 299,
+      "every_s": 600,
+      "levels": {}
+    },
+    {
+      "from": 600,
+      "to": 14400,
+      "every_s": 600,
+      "levels": {
+        "SVMP": 3,
+        "SVSP": 2
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 74,
+        "skin_temp": 33.0
+      }
+    },
+    {
+      "t": 300,
+      "vitals": {
+        "spo2": 98,
+        "rr": 16,
+        "hr": 102,
+        "skin_temp": 33.3
+      }
+    },
+    {
+      "t": 3600,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 96,
+        "skin_temp": 33.6
+      }
+    },
+    {
+      "t": 300,
+      "lfa": {
+        "control_ok": true,
+        "levels": {
+          "SVMP": 4,
+          "SVSP": 3
+        }
+      }
+    }
+  ],
+  "expect": {
+    "final_state": "ESCALATED",
+    "dispatched": true,
+    "payload_class": "BROAD",
+    "reasons_exact": [
+      "local_danger"
+    ],
+    "families_include": [
+      "SVMP"
+    ],
+    "base_receives": [
+      "CONTACT_INFO",
+      "ALERT"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

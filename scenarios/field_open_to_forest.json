@@ -1,0 +1,186 @@
+{
+  "name": "Field run: open field to forest edge",
+  "description": "M4 gate. The wearer walks from open field to the forest edge and is bitten there at 20 min. The cassette confirms at 25 min. They go under canopy at 40 min (no satellite, no GPS). The skin-fluid level rises at 60 min, so the band escalates and queues the ALERT. Companions carry the wearer back to the forest edge by 70 min, where only about half of the send attempts get through. A responder decides, drives to the trailhead and walks to the last REPORTED position. The base closes the alert when the responder is on scene. All responder numbers are PLACEHOLDER (R-28).",
+  "device_id": 1031,
+  "position": {
+    "lat": -3.448,
+    "lon": -62.195,
+    "hdop": 1.1
+  },
+  "battery": {
+    "start": 92,
+    "drain_per_hour": 1.2
+  },
+  "duration_s": 14400,
+  "bite_t": 1200,
+  "link": {
+    "seed": 5,
+    "profile": [
+      {
+        "from": 0,
+        "to": 1200,
+        "drop_prob": 0.05,
+        "label": "open field"
+      },
+      {
+        "from": 1200,
+        "to": 2400,
+        "drop_prob": 0.5,
+        "label": "forest edge"
+      },
+      {
+        "from": 2400,
+        "to": 4200,
+        "blackout": true,
+        "label": "under canopy"
+      },
+      {
+        "from": 4200,
+        "to": 14400,
+        "drop_prob": 0.5,
+        "label": "forest edge"
+      }
+    ]
+  },
+  "isf_reads": [
+    {
+      "from": 1800,
+      "to": 3599,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 1
+      }
+    },
+    {
+      "from": 3600,
+      "to": 14400,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 2,
+        "PLA2": 1
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 0,
+      "vitals": {
+        "spo2": 98,
+        "rr": 14,
+        "hr": 78,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 1200,
+      "vitals": {
+        "spo2": 98,
+        "rr": 15,
+        "hr": 104,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 4000,
+      "vitals": {
+        "spo2": 97,
+        "rr": 16,
+        "hr": 106,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 6600,
+      "vitals": {
+        "spo2": 89,
+        "rr": 26,
+        "hr": 118,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 14400,
+      "vitals": {
+        "spo2": 88,
+        "rr": 27,
+        "hr": 120,
+        "skin_temp": 33.1
+      }
+    },
+    {
+      "t": 600,
+      "gps": {
+        "lat": -3.454,
+        "lon": -62.2025,
+        "hdop": 1.2
+      }
+    },
+    {
+      "t": 1200,
+      "gps": {
+        "lat": -3.46,
+        "lon": -62.21,
+        "hdop": 1.6
+      }
+    },
+    {
+      "t": 1500,
+      "lfa_image": "data/cassette_elapid_3ftx2_pla2_1.png"
+    },
+    {
+      "t": 2400,
+      "gps": {
+        "lat": -3.4653,
+        "lon": -62.2159,
+        "hdop": 4.0
+      }
+    },
+    {
+      "t": 4200,
+      "gps": {
+        "lat": -3.461,
+        "lon": -62.211,
+        "hdop": 2.0
+      }
+    }
+  ],
+  "responder": {
+    "decision_delay_s": 300,
+    "trailhead": {
+      "lat": -3.456,
+      "lon": -62.205
+    },
+    "vehicle_kmh": 25,
+    "foot_kmh": 2.5,
+    "winding": 1.4,
+    "search_s": 900,
+    "fix_old_s": 900,
+    "hdop_poor": 5.0
+  },
+  "expect": {
+    "final_state": "RESOLVED",
+    "visits": [
+      "SYSTEMIC_WATCH",
+      "ESCALATED"
+    ],
+    "dispatched": true,
+    "payload_class": "FAMILY_MATCHED",
+    "families_include": [
+      "3FTx"
+    ],
+    "reasons_include": [
+      "isf_rise"
+    ],
+    "alert_retransmitted": true,
+    "responder_on_scene": true,
+    "base_receives": [
+      "CONTACT_INFO",
+      "ALERT",
+      "RESOLVED"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}

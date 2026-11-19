@@ -1,0 +1,53 @@
+{
+  "_note": "Research demonstrator — not a medical device. ALL CONTENT IS PLACEHOLDER (R-08). It names what a responder carries and reminders only; it is not treatment instruction. Real content, per deployment region, must come from a toxinologist. Antivenom products are region- and species-specific.",
+  "status": "PLACEHOLDER",
+  "region": "PLACEHOLDER — no region configured",
+
+  "families": {
+    "3FTx": {
+      "label": "Three-finger toxins (3FTx)",
+      "carry": "PLACEHOLDER: pre-made payload matched to 3FTx-dominant venoms (regional product to be named by a toxinologist)",
+      "reminders": [
+        "Carry bag-valve-mask ventilation support — it is the bridge if neurotoxic paralysis affects breathing"
+      ]
+    },
+    "PLA2": {
+      "label": "Phospholipase A2 (PLA2)",
+      "carry": "PLACEHOLDER: pre-made payload covering PLA2-rich venoms (regional product to be named by a toxinologist)",
+      "reminders": [
+        "PLACEHOLDER: PLA2 reminders to be written by a toxinologist"
+      ]
+    },
+    "SVMP": {
+      "label": "Snake venom metalloproteinases (SVMP)",
+      "carry": "PLACEHOLDER: pre-made payload matched to SVMP-dominant venoms (regional product to be named by a toxinologist)",
+      "reminders": [
+        "PLACEHOLDER: SVMP reminders (local tissue, bleeding) to be written by a toxinologist"
+      ]
+    },
+    "SVSP": {
+      "label": "Snake venom serine proteases (SVSP)",
+      "carry": "PLACEHOLDER: pre-made payload matched to SVSP-dominant venoms (regional product to be named by a toxinologist)",
+      "reminders": [
+        "PLACEHOLDER: SVSP reminders (clotting) to be written by a toxinologist"
+      ]
+    }
+  },
+
+  "broad": {
+    "label": "Broad (polyvalent) pre-made payload",
+    "carry": "PLACEHOLDER: broad-spectrum (polyvalent) pre-made payload for the region (product to be named by a toxinologist)",
+    "reminders": [
+      "Escalated on a strong local signal held past the danger timer (R-01) — no systemic signal was seen",
+      "Carry bag-valve-mask ventilation support"
+    ]
+  },
+
+  "always": [
+    "Trainer auto-injector only — drug-free (v1)",
+    "A human administers any auto-injector; nothing is injected automatically",
+    "Companion drone, if used, drops to a clearing or to the responder — never descends through canopy",
+    "Position and vitals are as old as the delay shown — check the message age",
+    "Close the alert on this dashboard when on scene"
+  ]
+}

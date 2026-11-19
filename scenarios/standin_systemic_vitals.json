@@ -1,0 +1,69 @@
+{
+  "name": "Stand-in inputs: systemic signs from the vitals file",
+  "description": "M3 gate. Cassette photo shows 3FTx (low) and PLA2 (trace), confirming the local signal. The skin-fluid (ISF) level stays flat, so it cannot be the systemic signal: escalation has to come from the vitals CSV, where SpO2 falls and breathing rate climbs. Base closes the alert at 2.5 h.",
+  "device_id": 1012,
+  "position": {
+    "lat": -3.4653,
+    "lon": -62.2159,
+    "hdop": 1.2
+  },
+  "battery": {
+    "start": 95,
+    "drain_per_hour": 1.0
+  },
+  "duration_s": 10800,
+  "vitals_csv": "data/vitals_systemic.csv",
+  "isf_reads": [
+    {
+      "from": 600,
+      "to": 10800,
+      "every_s": 300,
+      "levels": {
+        "3FTx": 1
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "t": 300,
+      "lfa_image": "data/cassette_elapid_3ftx2_pla2_1.png"
+    },
+    {
+      "t": 9000,
+      "base": "resolve"
+    }
+  ],
+  "expect": {
+    "final_state": "RESOLVED",
+    "visits": [
+      "SYSTEMIC_WATCH",
+      "ESCALATED"
+    ],
+    "dispatched": true,
+    "payload_class": "FAMILY_MATCHED",
+    "families_include": [
+      "3FTx",
+      "PLA2"
+    ],
+    "cassette_reads": [
+      {
+        "3FTx": 2,
+        "PLA2": 1
+      }
+    ],
+    "reasons_exclude": [
+      "isf_rise",
+      "local_danger"
+    ],
+    "alert_latency_max_s": 60,
+    "base_receives": [
+      "CONTACT_INFO",
+      "ALERT",
+      "RESOLVED"
+    ]
+  },
+  "base_position": {
+    "lat": -3.4321,
+    "lon": -62.1834
+  }
+}
