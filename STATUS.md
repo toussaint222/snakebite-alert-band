@@ -221,6 +221,5 @@ all confirmed by the owner on 2026-11-19 (DECISIONS.md, "Delegation"):
 - The vision and roadmap are in [VISION.md](VISION.md).
 
 **Next:** v1 (M0–M4) is complete and approved. VISION.md Phase 1 is next,
-and starts with the owner filing the provisional patent. Builder work that
-needs no spend or disclosure: the manual strip-entry mode, and drafting the
-toxinologist brief (kept private until filing). v1 is committed locally (no remote).
+(no patent: owner's ruling R-29, 2026-11-19). Builder work that needs no
+spend: the manual strip-entry mode, and drafting the toxinologist brief. v1 is committed locally (no remote).

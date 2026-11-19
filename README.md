@@ -11,10 +11,10 @@ PLACEHOLDER until ruled by the owner with expert input (see
 [DECISIONS.md](DECISIONS.md)). Progress and known gaps:
 [STATUS.md](STATUS.md). Where it goes next: [VISION.md](VISION.md).
 
-> Note for the builder: the "System description" below doubles as the
-> technical backbone of a patent provisional filing. It aims to be
-> complete and precise. Keep it private (no remote, nothing published)
-> until the owner says the provisional is filed (DECISIONS R-13).
+> Note for the builder: the "System description" below is the complete,
+> precise reference for how the system works. There is no patent plan and
+> no secrecy rule (DECISIONS R-29); publishing still happens only when the
+> owner asks.
 
 ## Contents
 

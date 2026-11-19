@@ -2,7 +2,7 @@
 
 > **Research demonstrator — not a medical device.** This is the builder's
 > product vision and recommendation, written after v1 (M0–M4). It makes no
-> medical claim. Private under R-13 until the provisional patent is filed.
+> medical claim. No patent is planned (DECISIONS R-29).
 > It is not a draft of any funding application.
 
 Written by the builder under the owner's instruction "take ownership of
@@ -51,19 +51,19 @@ v1 exposed a real choice.
   data to aim at.
 - For B, the sensor is the long pole, and partners own that science. The
   project's job is to be the best place to put a sensor once it exists.
-- **For the patent filing**, the claims should cover the system and method
-  (two-signal escalation with a toxin-family code, a fixed-size satellite
-  message, store-and-forward with alert priority, family-matched dispatch,
-  canopy behaviour and the local stuck-alert alarm) **independently of the
-  sensor technology**. That protects A now and B later. Claims and timing
-  are for the owner and a patent professional to decide.
+- **No patent (owner's ruling R-29).** The system design (two-signal
+  escalation with a toxin-family code, a fixed-size satellite message,
+  store-and-forward with alert priority, family-matched dispatch, canopy
+  behaviour and the local stuck-alert alarm) does not depend on the sensor
+  technology. Without a patent it can be shared openly, which may make
+  partners easier to find.
 
 ## 4. Assumptions, riskiest first, each with its cheapest test
 
 | # | Assumption | Why it matters | Cheapest test |
 |---|---|---|---|
-| 1 | Knowing the toxin family before the responder leaves changes what they carry or do, in a way that saves time or harm | It is the core value over a plain SOS button | One conversation with a toxinologist about whether family and level change the response in a real setting. Talk about the problem, not the design, until the filing |
-| 2 | A family-level test strip that a person or camera can read in the field can exist at a usable price | Track A needs it | A literature and supplier scan (after the filing), plus the same toxinologist conversation |
+| 1 | Knowing the toxin family before the responder leaves changes what they carry or do, in a way that saves time or harm | It is the core value over a plain SOS button | One conversation with a toxinologist about whether family and level change the response in a real setting. |
+| 2 | A family-level test strip that a person or camera can read in the field can exist at a usable price | Track A needs it | A literature and supplier scan, plus the same toxinologist conversation |
 | 3 | People in the target setting will wear and maintain a band | No wear, no system | Ask 5–10 people who work in snakebite regions (rangers, field researchers, farm co-ops) |
 | 4 | Satellite works often enough near where bites happen | Canopy is the norm in some places | A bench and outdoor test with one real modem, timing sends under tree cover (needs the owner's go-ahead and spend) |
 | 5 | Venom reaches the skin fluid early enough to give warning | Track B depends on it | Partner question only; not something to test ourselves |
@@ -78,15 +78,14 @@ build work without the owner's yes.
 88 tests passing, a full system description. M4 approved and R-25 to
 R-28 confirmed by the owner on 2026-11-19.
 
-**Phase 1 — Protect and validate (no hardware, no spend).**
-- The owner files the provisional patent (with a professional).
-- After filing: a one-page, plain-language brief for a toxinologist and a
+**Phase 1 — Validate (no hardware, no spend).**
+- A one-page, plain-language brief for a toxinologist and a
   sensor researcher (the builder can draft it), and the conversations in
   §4 rows 1–3.
 - Software, if wanted: a **manual entry mode**, where a companion types or
   photographs the strip result into a phone app or the band. This is the
   first real step of Track A and needs no new hardware.
-- Needs from the owner: filing, introductions, a yes to the brief.
+- Needs from the owner: introductions and a yes to the brief.
 
 **Phase 2 — Bench prototype (small spend, the owner's call).**
 - One RockBLOCK-class modem, a trainer band and a commercial pulse
@@ -121,7 +120,7 @@ R-28 confirmed by the owner on 2026-11-19.
 - The builder makes product and engineering calls, logs each one with its
   reasoning in DECISIONS.md, and marks it pending the owner's confirmation.
 - These stay with the owner: anything touching real people, venom, drugs
-  or money; disclosure and patent timing; anything submitted under the
+  or money; publishing or sharing the project; anything submitted under the
   owner's name; and turning any clinical PLACEHOLDER into a real value,
   which needs a named expert.
 

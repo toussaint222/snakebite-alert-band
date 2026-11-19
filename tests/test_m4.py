@@ -367,7 +367,7 @@ class ModemDriverTests(unittest.TestCase):
 
 
 class ReadmeCompletenessTests(unittest.TestCase):
-    """The README doubles as the patent backbone: it must name every field, type, state and threshold."""
+    """The README is the full system reference: it must name every field, type, state and threshold."""
 
     def test_readme_names_everything(self):
         import dataclasses
